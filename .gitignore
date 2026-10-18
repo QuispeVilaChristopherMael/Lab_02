@@ -1,0 +1,95 @@
+# ==========================================
+# Entornos Virtuales (Virtual Environments)
+# ==========================================
+myvenv/
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# ==========================================
+# Archivos de Secretos, Credenciales y Variables de Entorno
+# ==========================================
+.env
+.env.*
+!.env.example
+*.env
+secrets.json
+credentials.json
+local_settings.py
+*.pem
+*.key
+*.cert
+*.crt
+
+# ==========================================
+# Bases de Datos Locales
+# ==========================================
+*.sqlite3
+*.sqlite3-journal
+db.sqlite3
+
+# ==========================================
+# Archivos compilados y caché de Python
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==========================================
+# Archivos de Registro (Logs)
+# ==========================================
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ==========================================
+# IDEs y Editores de Código
+# ==========================================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# ==========================================
+# Archivos del Sistema Operativo
+# ==========================================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# ==========================================
+# Archivos temporales y de IA
+# ==========================================
+.gemini/
+.system_generated/

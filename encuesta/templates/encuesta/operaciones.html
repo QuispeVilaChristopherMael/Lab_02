@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        .nav-links { margin-bottom: 20px; padding: 10px; background-color: #f0f4f8; border-radius: 5px; }
+        .nav-links a { margin-right: 15px; color: #0066cc; text-decoration: none; font-weight: bold; }
+        .nav-links a:hover { text-decoration: underline; }
+        form { line-height: 2; margin-top: 15px; }
+        input[type="number"], select { padding: 5px 8px; font-size: 14px; margin-bottom: 10px; }
+        input[type="submit"] { padding: 6px 16px; font-size: 14px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <strong>Navegación del Laboratorio:</strong>
+        <a href="{% url 'encuesta:index' %}">1. Formulario Encuesta</a>
+        <a href="{% url 'encuesta:operaciones' %}">2. Operaciones Matemáticas (Tarea 1)</a>
+        <a href="{% url 'encuesta:cilindro' %}">3. Volumen Cilindro (Tarea 2)</a>
+    </div>
+
+    <h2>{{ titulo }}</h2>
+    <form action="{% url 'encuesta:calcular_operacion' %}" method="post">
+        {% csrf_token %}
+        <label for="num1">Primer número:</label><br>
+        <input type="number" step="any" id="num1" name="num1" required><br>
+
+        <label for="num2">Segundo número:</label><br>
+        <input type="number" step="any" id="num2" name="num2" required><br>
+
+        <label for="operacion">Operación:</label><br>
+        <select id="operacion" name="operacion" required>
+            <option value="suma">Suma</option>
+            <option value="resta">Resta</option>
+            <option value="multiplicacion">Multiplicación</option>
+        </select><br>
+
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>

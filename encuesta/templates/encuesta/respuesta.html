@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        .nav-links { margin-bottom: 20px; padding: 10px; background-color: #f0f4f8; border-radius: 5px; }
+        .nav-links a { margin-right: 15px; color: #0066cc; text-decoration: none; font-weight: bold; }
+        .nav-links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <strong>Navegación del Laboratorio:</strong>
+        <a href="{% url 'encuesta:index' %}">← Volver al Formulario</a>
+        <a href="{% url 'encuesta:operaciones' %}">Operaciones Matemáticas</a>
+        <a href="{% url 'encuesta:cilindro' %}">Volumen Cilindro</a>
+    </div>
+
+    <h2>{{ titulo }}</h2>
+    <p>Nombre: {{ nombre }}</p>
+    <p>Clave: {{ clave }}</p>
+    <p>Educación: {{ educacion }}</p>
+    <p>Nacionalidad: {{ nacionalidad }}</p>
+    <p>Idiomas:</p>
+    <ul>
+        {% for item in idiomas %}
+        <li>{{ item }}</li>
+        {% empty %}
+        <li>Ninguno seleccionado</li>
+        {% endfor %}
+    </ul>
+    <p>Email: {{ correo }}</p>
+    <p>Sitio Web: {{ website }}</p>
+</body>
+</html>

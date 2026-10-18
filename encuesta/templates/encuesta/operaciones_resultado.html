@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        .nav-links { margin-bottom: 20px; padding: 10px; background-color: #f0f4f8; border-radius: 5px; }
+        .nav-links a { margin-right: 15px; color: #0066cc; text-decoration: none; font-weight: bold; }
+        .nav-links a:hover { text-decoration: underline; }
+        .resultado-box { font-size: 18px; font-weight: bold; margin: 20px 0; padding: 15px; background-color: #eef7ee; border: 1px solid #c3e6cb; border-radius: 4px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <strong>Navegación del Laboratorio:</strong>
+        <a href="{% url 'encuesta:operaciones' %}">← Volver al Formulario de Operaciones</a>
+        <a href="{% url 'encuesta:index' %}">Formulario Encuesta</a>
+        <a href="{% url 'encuesta:cilindro' %}">Volumen Cilindro</a>
+    </div>
+
+    <h2>{{ titulo }}</h2>
+    <div class="resultado-box">
+        {{ resultado_texto }}
+    </div>
+</body>
+</html>

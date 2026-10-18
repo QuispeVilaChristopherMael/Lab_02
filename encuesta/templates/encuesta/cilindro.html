@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculo del Volumen de un Cilindro</title>
+    <style>
+        body { font-family: "Times New Roman", Times, serif, Arial; margin: 30px; }
+        .nav-links { font-family: Arial, sans-serif; margin-bottom: 25px; padding: 10px; background-color: #f0f4f8; border-radius: 5px; }
+        .nav-links a { margin-right: 15px; color: #0066cc; text-decoration: none; font-weight: bold; }
+        .nav-links a:hover { text-decoration: underline; }
+        h2 { font-weight: bold; font-size: 20px; letter-spacing: 0.5px; margin-bottom: 25px; }
+        .campo { margin-bottom: 20px; }
+        label { font-size: 17px; margin-right: 8px; }
+        input[type="text"], input[type="number"] { font-size: 16px; padding: 3px 6px; width: 220px; border: 1px solid #7a7a7a; }
+        input[type="submit"] { margin-top: 10px; font-size: 15px; padding: 4px 14px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <strong>Navegación del Laboratorio:</strong>
+        <a href="{% url 'encuesta:index' %}">1. Formulario Encuesta</a>
+        <a href="{% url 'encuesta:operaciones' %}">2. Operaciones Matemáticas (Tarea 1)</a>
+        <a href="{% url 'encuesta:cilindro' %}">3. Volumen Cilindro (Tarea 2)</a>
+    </div>
+
+    <h2>CÁLCULO DEL VOLUMEN DE UN CILINDRO</h2>
+    <form action="{% url 'encuesta:calcular_cilindro' %}" method="post">
+        {% csrf_token %}
+        <div class="campo">
+            <label for="diametro">Introduzca el diámetro en metros:</label>
+            <input type="text" id="diametro" name="diametro" placeholder="Ej. 2.15" required>
+        </div>
+
+        <div class="campo">
+            <label for="altura">Introduzca la altura en metros:</label>
+            <input type="text" id="altura" name="altura" placeholder="Ej. 1.75" required>
+        </div>
+
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>
